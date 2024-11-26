@@ -1,0 +1,45 @@
+/* Root Styling */
+.root {
+    -fx-background-color: #f4f4f4;
+    -fx-padding: 20;
+    -fx-font-family: Arial, sans-serif;
+}
+
+/* Title Styling */
+.title {
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #333;
+}
+
+/* Section Titles */
+.section-title {
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #555;
+    -fx-padding: 5 0;
+}
+
+/* Form Labels */
+.form-label {
+    -fx-font-size: 14px;
+    -fx-text-fill: #666;
+}
+
+/* Form Buttons */
+.form-button {
+    -fx-background-color: #4CAF50;
+    -fx-text-fill: white;
+    -fx-padding: 8 15;
+    -fx-border-radius: 5;
+    -fx-background-radius: 5;
+    -fx-font-size: 14px;
+}
+
+.form-button:hover {
+    -fx-background-color: #45A049;
+}
+
+.form-button:pressed {
+    -fx-background-color: #3E8E41;
+}

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.sdaproject.HelloController">
+
+    <!-- Top Section: Title -->
+    <top>
+        <Label text="University Bus Management System" styleClass="title-label" />
+    </top>
+
+    <!-- Center Section: Output Display -->
+    <center>
+        <VBox spacing="15" alignment="CENTER" styleClass="output-box">
+            <Label fx:id="outputLabel" text="Welcome! Please select your role." />
+            <Button text="Student" onAction="#handleStudentClick" styleClass="button"/>
+            <Button text="Admin" onAction="#handleAdminClick" styleClass="button"/>
+            <Button text="Driver" onAction="#handleDriverClick" styleClass="button"/>
+            <Button text="Parent" onAction="#handleParentClick" styleClass="button"/>
+        </VBox>
+    </center>
+
+    <!-- Bottom Section: Footer -->
+    <bottom>
+        <Label text="Powered by Zyntrix Tech Solutions" styleClass="footer" />
+    </bottom>
+</BorderPane>

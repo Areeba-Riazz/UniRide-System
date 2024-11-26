@@ -1,0 +1,55 @@
+/* Root styling for the form */
+.root {
+    -fx-padding: 30;
+    -fx-background-color: #f4f4f4;
+    -fx-spacing: 20;
+    -fx-font-family: 'Arial';
+}
+
+/* Title styling */
+.title {
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #333333;
+    -fx-padding: 10 0 20 0;
+}
+
+/* Form label styling */
+.form-label {
+    -fx-font-size: 14px;
+    -fx-text-fill: #555555;
+}
+
+/* TextField and PasswordField styling */
+.text-field {
+    -fx-border-color: #cccccc;
+    -fx-border-radius: 5;
+    -fx-padding: 5;
+    -fx-background-radius: 5;
+    -fx-background-color: white;
+    -fx-pref-width: 200;
+}
+
+/* Button styling */
+.button {
+    -fx-font-size: 14px;
+    -fx-text-fill: white;
+    -fx-background-color: #4CAF50;
+    -fx-border-radius: 5;
+    -fx-background-radius: 5;
+    -fx-padding: 8 15;
+}
+
+.button:hover {
+    -fx-background-color: #45a049;
+}
+
+.button:pressed {
+    -fx-background-color: #3e8e41;
+}
+
+/* Feedback label styling */
+.feedback-label {
+    -fx-font-size: 14px;
+    -fx-font-style: italic;
+}

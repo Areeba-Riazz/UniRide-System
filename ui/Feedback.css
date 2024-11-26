@@ -1,0 +1,59 @@
+/* General window styling */
+.root {
+    -fx-font-family: 'Arial';
+    -fx-padding: 30;
+    -fx-background-color: #f4f4f4;
+}
+
+/* Styling for Labels */
+.label {
+    -fx-font-size: 18px;
+    -fx-text-fill: #333333;
+}
+
+/* Styling for TextFields and TextAreas */
+.text-field, .text-area {
+    -fx-border-color: #cccccc;
+    -fx-border-radius: 5;
+    -fx-padding: 5;
+    -fx-background-radius: 5;
+    -fx-background-color: #ffffff;
+}
+
+/* Styling for Buttons */
+.button {
+    -fx-font-size: 14px;
+    -fx-text-fill: #ffffff;
+    -fx-background-color: #4CAF50;
+    -fx-border-radius: 5;
+    -fx-background-radius: 5;
+    -fx-padding: 8 15;
+}
+
+.button:hover {
+    -fx-background-color: #45a049;
+}
+
+.button:pressed {
+    -fx-background-color: #3e8e41;
+}
+
+.hbox
+ {
+    -fx-spacing: 10;
+    -fx-alignment: center;
+ }
+
+.vbox {
+    -fx-spacing: 15;
+    -fx-alignment: center-left;
+}
+
+/* Custom styling for the Feedback form title */
+.title {
+    -fx-font-size: 25px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #2c3e50;
+    -fx-padding: 10 0 20 0;
+    -fx-alignment: center;
+}

@@ -1,0 +1,84 @@
+package org.example.sdaproject;
+
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+import javafx.fxml.FXML;
+import javafx.scene.control.*;
+
+import java.util.List;
+import java.util.stream.Collectors;
+
+public class LostAndFoundController {
+
+    @FXML
+    private TextField reporterNameField;
+
+    @FXML
+    private TextField itemDescriptionField;
+
+    @FXML
+    private TextField locationField;
+
+    @FXML
+    private TextField searchField;
+
+    @FXML
+    private ListView<String> searchResultsList;
+
+    private final ObservableList<LostItem> lostItems = FXCollections.observableArrayList();
+
+    @FXML
+    private void handleReportLostItem() {
+        String reporterName = reporterNameField.getText().trim();
+        String itemDescription = itemDescriptionField.getText().trim();
+        String location = locationField.getText().trim();
+
+        if (reporterName.isEmpty() || itemDescription.isEmpty() || location.isEmpty()) {
+            showAlert("Error", "Please fill out all fields to report a lost item.");
+            return;
+        }
+
+        // Add the lost item to the list
+        LostItem lostItem = new LostItem(reporterName, itemDescription, location);
+        lostItems.add(lostItem);
+
+        // Clear input fields
+        reporterNameField.clear();
+        itemDescriptionField.clear();
+        locationField.clear();
+
+        showAlert("Success", "Lost item reported successfully!");
+    }
+
+    @FXML
+    private void handleSearchLostItems() {
+        String keyword = searchField.getText().trim().toLowerCase();
+
+        if (keyword.isEmpty()) {
+            showAlert("Error", "Please enter a keyword to search.");
+            return;
+        }
+
+        // Search for items matching the keyword
+        List<String> results = lostItems.stream()
+                .filter(item -> item.getItemDescription().toLowerCase().contains(keyword)
+                        || item.getLocation().toLowerCase().contains(keyword))
+                .map(LostItem::toString)
+                .collect(Collectors.toList());
+
+        if (results.isEmpty()) {
+            showAlert("No Results", "No items found matching the keyword.");
+        }
+
+        // Update the ListView with the results
+        searchResultsList.setItems(FXCollections.observableArrayList(results));
+    }
+
+    private void showAlert(String title, String content) {
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle(title);
+        alert.setHeaderText(null);
+        alert.setContentText(content);
+        alert.showAndWait();
+    }
+}

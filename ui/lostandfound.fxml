@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="org.example.sdaproject.LostAndFoundController" spacing="15" alignment="CENTER" style="-fx-padding: 20;">
+
+    <!-- Title -->
+    <Label text="Lost and Found" styleClass="title-label" />
+
+    <!-- Report Lost Item Section -->
+    <TitledPane text="Report Lost Item" styleClass="titled-pane">
+        <VBox spacing="10" styleClass="inner-vbox">
+            <HBox spacing="10">
+                <Label text="Your Name:" />
+                <TextField fx:id="reporterNameField" promptText="Enter your name" />
+            </HBox>
+
+            <HBox spacing="10">
+                <Label text="Item Description:" />
+                <TextField fx:id="itemDescriptionField" promptText="Describe the lost item" />
+            </HBox>
+
+            <HBox spacing="10">
+                <Label text="Location (Bus ID or Area):" />
+                <TextField fx:id="locationField" promptText="Enter bus ID or location" />
+            </HBox>
+
+            <Button text="Report Lost Item" onAction="#handleReportLostItem" styleClass="button" />
+        </VBox>
+    </TitledPane>
+
+    <!-- Search Lost Item Section -->
+    <TitledPane text="Search Lost Items" styleClass="titled-pane">
+        <VBox spacing="10" styleClass="inner-vbox">
+            <HBox spacing="10">
+                <Label text="Keyword:" />
+                <TextField fx:id="searchField" promptText="Enter keyword to search" />
+            </HBox>
+
+            <Button text="Search" onAction="#handleSearchLostItems" styleClass="button" />
+
+            <!-- Display Found Items -->
+            <ListView fx:id="searchResultsList" prefHeight="200" />
+        </VBox>
+    </TitledPane>
+
+</VBox>

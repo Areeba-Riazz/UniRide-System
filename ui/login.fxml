@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="org.example.sdaproject.LoginController" alignment="CENTER" spacing="20" styleClass="root">
+
+    <!-- Login Form Title -->
+    <Label text="Login to Your Account" styleClass="title"/>
+
+    <!-- Login Form Fields -->
+    <VBox spacing="10" alignment="CENTER" prefWidth="300">
+        <HBox spacing="10">
+            <Label text="Email:" styleClass="form-label"/>
+            <TextField fx:id="emailField" promptText="Enter your email" styleClass="text-field" />
+        </HBox>
+        <HBox spacing="10">
+            <Label text="Password:" styleClass="form-label"/>
+            <PasswordField fx:id="passwordField" promptText="Enter your password" styleClass="text-field" />
+        </HBox>
+    </VBox>
+
+    <!-- Login Button -->
+    <Button text="Log In" onAction="#handleLogin" styleClass="button" />
+
+    <!-- Feedback Label -->
+    <Label fx:id="feedbackLabel" styleClass="feedback-label"/>
+
+</VBox>
